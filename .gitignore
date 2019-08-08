@@ -1,3 +1,7 @@
+#project
+data/
+account.py
+
 #pycharm
 .idea/
 
