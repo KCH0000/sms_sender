@@ -15,7 +15,6 @@ source_files = [
 blacklist_file = 'blacklist.csv'
 
 sender_list = []
-
 for file in source_files:
     sender_list += load_data_from_csv(file['name'], file['encoding'])
     response_logger.info(f'Загружены данные из {file["name"]}, всего {len(sender_list)} номеров')
