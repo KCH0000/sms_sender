@@ -1,9 +1,12 @@
-from sender import load_data_from_csv, send_sms
+from sender import load_data_from_csv, send_sms_smsc_ru, send_sms_smsaero_ru
 from log.logger import response_logger
 from time import sleep
 
 MESSAGE = '17 августа 13.00 состоится ' \
-          'собрание собственников, членов СНТ "Астра"'
+          'собрание СНТ "Астра"' \
+          'подробнеев https://clck.ru/HZJHy'
+
+SENDER = 'ACTPA CHT'
 
 source_files = [
     {'name': 'astra_phones_1.csv', 'encoding': 'UTF-8'},
@@ -35,3 +38,5 @@ response_logger.info(f'Длина сообщения {len(MESSAGE)} символ
 #     sleep(1)
 #     send_sms(sender, MESSAGE)
 # send_sms('79266023332', MESSAGE, 'SMSC.RU')
+
+send_sms_smsaero_ru('79266023332', MESSAGE, SENDER)
