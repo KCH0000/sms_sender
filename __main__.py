@@ -2,9 +2,7 @@ from sender import load_data_from_csv, send_sms_smsc_ru, send_sms_smsaero_ru
 from log.logger import response_logger
 from time import sleep
 
-MESSAGE = '17 августа 13.00 состоится ' \
-          'собрание СНТ "Астра"' \
-          'подробнеев https://clck.ru/HZJHy'
+MESSAGE = '17.08.19 в 13.00 собрание СНТ "Астра" подробнее https://clck.ru/Haayn'
 
 SENDER = 'ACTPA CHT'
 
@@ -34,9 +32,6 @@ if len(MESSAGE) > 70:
 
 response_logger.info(f'Длина сообщения {len(MESSAGE)} символов')
 
-# for sender in sender_list:
-#     sleep(1)
-#     send_sms(sender, MESSAGE)
-# send_sms('79266023332', MESSAGE, 'SMSC.RU')
-
-send_sms_smsaero_ru('79266023332', MESSAGE, SENDER)
+for sender in sender_list:
+    sleep(1)
+    send_sms_smsaero_ru('79266023332', MESSAGE, SENDER)
